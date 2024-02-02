@@ -1,4 +1,5 @@
 "use client";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +9,13 @@ const Header = () => (
     <nav className="invert"></nav>
     <nav className="nav-container">
       <Link href={"#"} scroll={true}>
-        <Image height={50} width={100} src={"/signature.png"} alt="pic" />
+        <Image
+          height={50}
+          width={100}
+          src={"/signature.png"}
+          alt="pic"
+          loading="eager"
+        />
       </Link>
       <span className="options">
         <Link href={"#skill"}>Skills</Link>
@@ -244,11 +251,6 @@ const Projects = () => {
   );
 };
 const Resume = () => {
-  const pdfUrl = "../public/resume.pdf";
-  const googleDocsViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(
-    pdfUrl
-  )}&embedded=true`;
-
   return (
     <section className="resume-container" id="resume">
       <h1>My Resume</h1>
@@ -298,6 +300,26 @@ const Footer = () => (
 export default function Home() {
   return (
     <>
+      <Head>
+        <link rel="preload" href="/bootstrap.png" />
+        <link rel="preload" href="/c.png" />
+        <link rel="preload" href="/css.png" />
+        <link rel="preload" href="/html.png" />
+        <link rel="preload" href="/java.png" />
+        <link rel="preload" href="/js.png" />
+        <link rel="preload" href="/lightroom.png" />
+        <link rel="preload" href="/mongodb.png" />
+        <link rel="preload" href="/mysql.png" />
+        <link rel="preload" href="/node.png" />
+        <link rel="preload" href="/oracle.png" />
+        <link rel="preload" href="/premiere.png" />
+        <link rel="preload" href="/profile.jpg" />
+        <link rel="preload" href="/python.png" />
+        <link rel="preload" href="/react.png" />
+        <link rel="preload" href="/sass.png" />
+        <link rel="preload" href="/signature.png" />
+        <link rel="preload" href="/typescript.png" />
+      </Head>
       <Header />
       <About />
       <Skills />
